@@ -5,7 +5,6 @@
 # This box start with a basic Ubuntu 14.04 (trusty) based on phusion/ubuntu-14.04-amd64
 # And it adds the following packages aimed for rails development
 
-# - rbenv and ruby-build
 # - ruby 2.3.1 with bundler
 # - Git 1.9.1
 # - Postgresql 9.3
@@ -15,8 +14,6 @@
 # - Qt for Capybara Webkit
 # - ImageMagick
 
-# disable docs during gem install
-echo 'gem: --no-rdoc --no-ri' >> ~/.gemrc
 
 # essentials
 # sudo apt-get update
@@ -46,14 +43,9 @@ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-bu
 # Install ruby 2.3.1 and bundler
 rvm install ruby-2.3.1
 rvm use 2.3.1
-# export RBENV_ROOT="${HOME}/.rbenv"
-# export PATH="${RBENV_ROOT}/bin:${PATH}"
-# export PATH="${RBENV_ROOT}/shims:${PATH}"
-# rbenv install 2.3.1
-# rbenv global 2.3.1
+
 gem install bundler
 gem install rails
-# rbenv rehash
 
 # Phantomjs
 sudo wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2 -P /usr/local/share --quiet
